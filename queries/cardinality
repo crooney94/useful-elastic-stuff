@@ -1,0 +1,12 @@
+POST cardinality_example/_search
+{
+    "size":0,
+    "aggs":{
+        "domain_count": {
+	    "cardinality": {
+		"field": "domain"
+	    }
+	}
+    }
+
+}

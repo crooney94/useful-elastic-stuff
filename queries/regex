@@ -1,0 +1,8 @@
+GET blogs/_search
+{
+   "query":{
+      "regexp":{
+	"title":"blah.*"
+	}
+    }
+}

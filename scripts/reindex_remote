@@ -1,0 +1,14 @@
+POST reindex?wait_for_completion=false
+{
+    "conflicts":"proceed",
+    "source":{
+      "remote":{"host":"https://blah:9200","username":"uname", "password":"psswd"},
+      "index": "src_index"
+    },
+    "dest":{
+       "index":"dest_index"
+     },
+     "script":{
+	  "source": "ctx._source.field_example = 'new_field_name'"
+	}
+}

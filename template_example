@@ -1,0 +1,22 @@
+POST _scripts/my_search_template
+{
+"script":{
+    "lang": "mustache",
+    "source": {
+	"query":{
+	"match":{
+	  "{{my_field}}":"{{my_value}}"
+	}	
+    }
+   }
+}
+}
+
+GET blogs/_search/template
+{
+    "id": "my_search_template",
+    "params":{
+	"my_field":"field_name",
+	"my_value": "value"
+    }
+}

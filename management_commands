@@ -1,0 +1,20 @@
+#lists indices
+GET _cat/indices
+#lists aliases
+GET _cat/aliases
+#lists nodes with fields in readable format
+GET _cat/nodes?v&h=name,disk.avail,search.query_total,heap.percent
+#returns hot threads, for diagnosing performance
+GET _nodes/hot_threads
+GET _cat/thread_pool?v
+#lists tasks, optional task id
+GET _tasks/<task id>
+GET _tasks?detailed=true&actions=*byquery
+#tasks waiting to be run
+GET _cluster/pending_tasks
+#allocation status, can show what reallocation is ongoing 
+GET _cluster/allocation/explain
+GET _cluster/settings?include_defaults=true
+GET _cluster/health?level=indices
+GET _cat/recovery?v&pretty
+
